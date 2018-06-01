@@ -5,7 +5,10 @@ var ReactDOM = require('react-dom');
 class TodoComponent extends React.Component{
     render(){
         return(
-            <h1>TW</h1>
+            <div>
+                <h1>Hello, World</h1>
+                <p>Get Ready</p>
+            </div>
         );
     }
 }﻿
