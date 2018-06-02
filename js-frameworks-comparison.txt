@@ -1,0 +1,42 @@
+// Describe the differences between React, Angular, and Vue
+// Describe the difference between MEAN vs MERN
+// 2 - 4 paragraphs maximum
+// Include a link to a website that uses that technology
+
+
+
+==============
+Angular:
+
++ Detailed docs
++ MVVM
+- Complex syntax
+
+Companies that use Angular 5: Upwork, Freelancer, Udemy,
+YouTube, Paypal, Nike, Google, Telegram, Weather,
+iStockphoto, AWS, Crunchbase.
+
+
+==============
+React:
+
++ Easy to learn
++ Downward data binding (child elements cannot affect parent data)
++ 100% open-source
++ Virtual DOM
+- Docs are lacking
+
+Companies that use ReactJS: Facebook, Instagram, Netflix, New York Times,
+Yahoo, Khan Academy, Whatsapp, Codecademy,
+Dropbox, Airbnb, Asana, Atlassian, Intercom, Microsoft.
+
+==============
+Vue:
+
++ Detailed docs
++ Easy to integrate for both simple and complex apps
++ Tiny size
+- Lack of docs
+
+Companies that use Vue.js: Xiaomi, Alibaba, WizzAir, EuroNews,
+Grammarly, Gitlab and Laracasts, Adobe, Behance, Codeship, Reuters.
