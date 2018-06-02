@@ -1,22 +1,1 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-// Create component
-class TodoComponent extends React.Component{
-    render(){
-        return(
-            <div>
-                <h1>Hello, World</h1>
-                <p>Get Ready</p>
-                <p>{this.props.msg}</p>
-                <p><strong>Programming Language: </strong>{this.props.coding.language}</p>
-                <p><strong>Language Difficulty: </strong>{this.props.coding.difficulty}</p>
-                <p><strong>Language Developer: </strong>{this.props.coding.developer}</p>
-            </div>
-        );
-    }
-}﻿
-
-var myCode = {language: 'React', difficulty: 'Medium', developer: 'Facebook'};
-// Put component into HTML page
-ReactDOM.render(<TodoComponent msg="I love coding." coding={myCode}/>, document.getElementById('todo-wrapper'));
+var React = require('react');var ReactDOM = require('react-dom');import { Component } from 'react';// Create component    export class TodoComponent extends Component {        constructor(props) {            super(props);            this.state = {                todos: ['code', 'eat', 'code more'],                age: 30            };        }        render() {            var ager = setTimeout(function () {                this.setState({                    age: 35                })            }.bind(this), 5000);            return (                <div id="todo-list">                    <p>The busiest people have the most leisure...</p>                    <p>{this.state.age}</p>                    <ul>                        <li>{this.state.todos[0]}</li>                        <li>{this.state.todos[1]}</li>                        <li>{this.state.todos[2]}</li>                    </ul>                </div>            );        } // Render    }// Put component into HTML pageReactDOM.render(<TodoComponent />, document.getElementById('todo-wrapper'));
