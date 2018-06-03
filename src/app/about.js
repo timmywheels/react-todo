@@ -1,0 +1,19 @@
+var React = require('react');
+var createReactClass = require('create-react-class');
+require('./css/index.css');
+
+import { Link } from 'react-router';
+
+class About extends React.Component {
+    render(){
+        return(
+            <div>
+                <Link to={'/'}>Home</Link>
+                <h2>TimWheeler.com</h2>
+                <a target="_blank" href="https://timwheeler.com"><img class="logo" src="https://timwheeler.com/wp-content/uploads/2017/11/tw-logo-white.svg" alt="TW Logo"></img></a>
+            </div>
+        );
+    }
+};
+
+module.exports = About;

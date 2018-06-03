@@ -1,17 +1,35 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var createReactClass = require('create-react-class');
+import {Router, Route, browserHistory, Link} from 'react-router';
 
+// CSS Requires
 require('./css/index.css');
 
 // Module requires
 var TodoItem = require('./todo-item');
+var AddItem = require('./add-item');
+var About = require('./about');
 
-import { Component } from 'react';
+
+// Routing
+class App extends React.Component {
+    constructor() {
+        super();
+    }
+    render() {
+        return(
+            <Router history={browserHistory}>
+                <Route path={'/'} component={TodoComponent}></Route>
+                <Route path={'/about'} component={About}></Route>
+            </Router>
+        );
+    }
+}
+
 
 
 // Create component
-    export class TodoComponent extends Component {
+    class TodoComponent extends React.Component {
         constructor(props) {
             super(props);
             this.state = {
@@ -19,6 +37,7 @@ import { Component } from 'react';
 
             };
             this.onDelete = this.onDelete.bind(this);
+            this.onAdd = this.onAdd.bind(this);
         } // constructor
 
         render() {
@@ -30,8 +49,11 @@ import { Component } from 'react';
             }.bind(this));
             return (
                 <div id="todo-list">
-                    <p>The busiest people have the most leisure...</p>
+                    <p>Todo List</p>
                     <ul>{todos}</ul>
+                    <AddItem onAdd={this.onAdd}/>
+                    <Link to={'/about'}>About</Link>
+                    <a target="_blank" href="https://timwheeler.com"><img class="logo" src="https://timwheeler.com/wp-content/uploads/2017/11/tw-logo-white.svg" alt="TW Logo"></img></a>
                 </div>
             );
         } // render
@@ -49,7 +71,28 @@ import { Component } from 'react';
             });
         } // onDelete
 
+        onAdd(item){
+            var updatedTodos = this.state.todos;
+            updatedTodos.push(item);
+            this.setState({
+                todos: updatedTodos
+            })
+        }
+
+        // Lifecycle functions
+        componentWillMount(){
+            console.log('componentWillMount');
+        }
+
+        componentDidMount(){ // Good for any grabbing of external data
+            console.log('componentDidMount');
+
+        }
+
+        componentWillUpdate(){
+            console.log('componentWillUpdate');
+        }
 
 };
 
-ReactDOM.render(<TodoComponent />, document.getElementById('todo-wrapper'));
+ReactDOM.render(<App />, document.getElementById('todo-wrapper'));
