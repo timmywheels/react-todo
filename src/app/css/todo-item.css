@@ -5,12 +5,14 @@
 }
 
 .todo-item:hover{
-    background: #eee;
+    background: #c8102e1c;
 }
 
 .item-name{
     flex-basis: 0;
     flex-grow: 9;
+    font-size: 25px;
+    color: #555;
 }
 
 .item-remove{

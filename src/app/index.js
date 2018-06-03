@@ -52,7 +52,7 @@ class App extends React.Component {
                     <p>Todo List</p>
                     <ul>{todos}</ul>
                     <AddItem onAdd={this.onAdd}/>
-                    <Link to={'/about'}>About</Link>
+                    <Link class="link" to={'/about'}>About</Link>
                     <a target="_blank" href="https://timwheeler.com"><img class="logo" src="https://timwheeler.com/wp-content/uploads/2017/11/tw-logo-white.svg" alt="TW Logo"></img></a>
                 </div>
             );
